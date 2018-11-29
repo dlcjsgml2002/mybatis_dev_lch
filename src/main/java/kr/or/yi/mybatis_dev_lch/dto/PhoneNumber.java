@@ -5,10 +5,7 @@ public class PhoneNumber {
 	private String stateCode;
 	private String number;
 
-	public PhoneNumber() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	public PhoneNumber() {}
 
 	public PhoneNumber(String countryCode, String stateCode, String number) {
 		this.countryCode = countryCode;

@@ -3,26 +3,23 @@ package kr.or.yi.mybatis_dev_lch.dto;
 import java.util.Date;
 
 public class Student {
-	private String studId;
+	private int studId;
 	private String name;
 	private String email;
 	private PhoneNumber phone;
 	private Date dob;
-	public Student() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Student(String studId, String name, String email, PhoneNumber phone, Date dob) {
+	public Student() {}
+	public Student(int studId, String name, String email, PhoneNumber phone, Date dob) {
 		this.studId = studId;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
 		this.dob = dob;
 	}
-	public String getStudId() {
+	public int getStudId() {
 		return studId;
 	}
-	public void setStudId(String studId) {
+	public void setStudId(int studId) {
 		this.studId = studId;
 	}
 	public String getName() {
