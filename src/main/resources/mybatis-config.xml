@@ -28,5 +28,6 @@
 		</environment>
 	</environments>
 	<mappers>
+		<package name="kr.or.yi.mybatis_dev_lch.dao"/>
 	</mappers>
 </configuration>
