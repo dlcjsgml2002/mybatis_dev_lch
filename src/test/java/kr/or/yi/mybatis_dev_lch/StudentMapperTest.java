@@ -20,12 +20,11 @@ public class StudentMapperTest extends AbstractTest {
 
 	@Test
 	public void test01selectStudentById() {
-		log.debug("selectStudentById()");
+		log.debug("test01SelectStudentById()");
 		Student newStd = new Student();
 		newStd.setStudId(2);
-
 		Student searchStd = dao.selectStudentById(newStd);
-		Assert.assertEquals(newStd.getStudId(), searchStd.getStudId());
+		Assert.assertNotNull(searchStd);
 	}
 
 	@Test
@@ -42,17 +41,17 @@ public class StudentMapperTest extends AbstractTest {
 		newDate.set(1993, 10, 12);
 
 		Student student = new Student();
-		student.setStudId(5);
+		student.setStudId(6);
 		student.setName("이춰니");
 		student.setEmail("chunee@gmail.com");
-		student.setDob(newDate.getTime());
 		student.setPhone(new PhoneNumber("010-0070-6969"));
+		student.setDob(newDate.getTime());
 
 		int res = dao.insertStudent(student);
 		Assert.assertEquals(1, res);
 	}
 
-	@Test
+	/*@Test
 	public void test04updateStudent() {
 		log.debug("insertStudent()");
 		Calendar newDate = GregorianCalendar.getInstance();
@@ -69,5 +68,5 @@ public class StudentMapperTest extends AbstractTest {
 		log.debug("deleteStudent()");
 		int res = dao.deleteStudent(5);
 		Assert.assertEquals(1, res);
-	}
+	}*/
 }
