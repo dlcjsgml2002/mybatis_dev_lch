@@ -50,5 +50,4 @@ public class StudentMapperImpl implements StudentMapper {
 			return res;
 		}
 	}
-
 }

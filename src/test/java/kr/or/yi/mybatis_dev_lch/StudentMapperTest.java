@@ -19,54 +19,57 @@ public class StudentMapperTest extends AbstractTest {
 	private static StudentMapper dao = new StudentMapperImpl();
 
 	@Test
-	public void test01selectStudentById() {
+	public void test01SelectStudentById() {
 		log.debug("test01SelectStudentById()");
 		Student newStd = new Student();
 		newStd.setStudId(2);
+		
 		Student searchStd = dao.selectStudentById(newStd);
 		Assert.assertNotNull(searchStd);
 	}
-
+	
 	@Test
-	public void test02selectStudentByAll() {
-		log.debug("selectStudentByAll()");
-		List<Student> lists = dao.selectStudentByAll();
-		Assert.assertNotNull(lists);
+	public void test02SelectStudentByAll() {
+		log.debug("test02SelectStudentByAll()");
+		List<Student> list = dao.selectStudentByAll();
+		Assert.assertNotNull(list);
 	}
-
+	
 	@Test
-	public void test03insertStudent() {
-		log.debug("updateStudent()");
+	public void test03InsertStudentAnnotation() {
 		Calendar newDate = GregorianCalendar.getInstance();
-		newDate.set(1993, 10, 12);
-
+		newDate.set(1990, 4, 28);
+		
 		Student student = new Student();
-		student.setStudId(6);
-		student.setName("이춰니");
-		student.setEmail("chunee@gmail.com");
-		student.setPhone(new PhoneNumber("010-0070-6969"));
+		student.setStudId(3);
+		student.setName("홍길동");
+		student.setEmail("test@google.co.kr");
+		student.setPhone(new PhoneNumber("010-123-1234"));
 		student.setDob(newDate.getTime());
-
-		int res = dao.insertStudent(student);
-		Assert.assertEquals(1, res);
-	}
-
-	/*@Test
-	public void test04updateStudent() {
-		log.debug("insertStudent()");
-		Calendar newDate = GregorianCalendar.getInstance();
-		newDate.set(2022, 2, 22);
-
-		Student student = new Student(5, "이쫘니", "zzani@nate.com", new PhoneNumber("010-2020-0022"), newDate.getTime());
-
+		
 		int res = dao.insertStudent(student);
 		Assert.assertEquals(1, res);
 	}
 
 	@Test
-	public void test05deleteStudent() {
-		log.debug("deleteStudent()");
-		int res = dao.deleteStudent(5);
+	public void test04UpdateStudent() {
+		Calendar newDate = GregorianCalendar.getInstance();
+		newDate.set(2000, 4, 28);
+		
+		Student student = new Student();
+		student.setStudId(3);
+		student.setName("홍길동5");
+		student.setEmail("hong@test.co.kr");
+		student.setPhone(new PhoneNumber("010-111-2222"));
+		student.setDob(newDate.getTime());
+		
+		int res = dao.updateStudent(student);
 		Assert.assertEquals(1, res);
-	}*/
+	}
+	
+	@Test
+	public void test05DeleteStudent() {
+		int res = dao.deleteStudent(3);
+		Assert.assertEquals(1, res);
+	}
 }
